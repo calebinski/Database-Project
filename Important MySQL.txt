@@ -1,3 +1,4 @@
+-------Table Creation---------
 CREATE TABLE User (
     user_id INT,
     username VARCHAR (128),
@@ -77,3 +78,51 @@ CREATE TABLE Enemy (
     magic_resist INT,
     PRIMARY KEY(enemy_id)
 );
+------------------------------------------
+
+--------Stored Procedures-----------------
+DELIMITER //
+CREATE PROCEDURE GetUsers ()
+BEGIN
+    SELECT user_id, username FROM user;
+END //
+DELIMITER;
+
+DELIMITER //
+CREATE PROCEDURE GetCharacterInfo()
+BEGIN
+    SELECT * FROM player_character;
+END //
+DELIMITER;
+
+DELIMITER //
+CREATE PROCEDURE GetCharacterInfo()
+BEGIN
+    SELECT * FROM player_character;
+END //
+DELIMITER;
+
+DELIMITER //
+CREATE PROCEDURE GetTeams()
+BEGIN
+    SELECT * FROM team;
+END //
+DELIMITER;
+
+DELIMITER //
+CREATE PROCEDURE getcharacterbyname(IN charname VARCHAR(128))
+BEGIN
+    SELECT * FROM player_character WHERE name = charname;
+END //
+DELIMITER;
+
+DELIMITER //
+CREATE PROCEDURE dbapp.getcharacterbyuser(IN username VARCHAR(128))
+BEGIN
+    SELECT * 
+    FROM player_character 
+    INNER JOIN user_characters ON player_character.name = user_characters.name
+    WHERE user_characters.user_id = username;
+END //
+DELIMITER ; 
+--------------------------------------------
