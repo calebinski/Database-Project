@@ -20,45 +20,96 @@
 		</div>
 	</div>
 	<div id="main" class="col-10">
-		<h1>TEAMS</h1>
-		<table class="table">
-			 <thead>
-				<tr>
-					<th scope="col">Team Name</th>
-					<th scope="col">Team Leader</th>
-					<th scope="col">Members</th>
-					<th scope="col">Active Heroes</th>
-					<th scope="col">Average Level</th>
-					<th scope="col">Combined Stats</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Nerd Parade</td>
-					<td>CountingBodiesLikeSheep</td>
-					<td><p>CountingBodiesLikeSheep</p><p>JonSnow</p><p>RedRingRocky</p></td>
-					<td><p>Jamitrious</p><p>Cerby</p><p>Pooty</p></td>
-					<td>80</td>
-					<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-				</tr>
-				<tr>
-					<td>Nerd Parade</td>
-					<td>CountingBodiesLikeSheep</td>
-					<td><p>CountingBodiesLikeSheep</p><p>JonSnow</p><p>RedRingRocky</p></td>
-					<td><p>Jamitrious</p><p>Cerby</p><p>Pooty</p></td>
-					<td>80</td>
-					<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-				</tr>
-				<tr>
-					<td>Nerd Parade</td>
-					<td>CountingBodiesLikeSheep</td>
-					<td><p>CountingBodiesLikeSheep</p><p>JonSnow</p><p>RedRingRocky</p></td>
-					<td><p>Jamitrious</p><p>Cerby</p><p>Pooty</p></td>
-					<td>80</td>
-					<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-				</tr>
-			</tbody>
-		</table>
+		<div id="header" class="container-fluid">
+			<div class="col-3"><h4>TEAMS</h4></div>
+			<div class="col-7"></div>
+			<div class="col-1"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createTeamModal">Create a Team</button></div>
+			<div class="col-1"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editTeamModal">Edit a Team</button></div>
+		</div>
+		<div id="content" class="container-fluid">
+			<table class="table">
+				 <thead>
+					<tr>
+						<th scope="col">Team Name</th>
+						<th scope="col">Team Leader</th>
+						<th scope="col">Members</th>
+						<th scope="col">Active Heroes</th>
+						<th scope="col">Average Level</th>
+						<th scope="col">Combined Stats</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Nerd Parade</td>
+						<td>CountingBodiesLikeSheep</td>
+						<td><p>CountingBodiesLikeSheep</p><p>JonSnow</p><p>RedRingRocky</p></td>
+						<td><p>Jamitrious</p><p>Cerby</p><p>Pooty</p></td>
+						<td>80</td>
+						<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
+					</tr>
+					<tr>
+						<td>Nerd Parade</td>
+						<td>CountingBodiesLikeSheep</td>
+						<td><p>CountingBodiesLikeSheep</p><p>JonSnow</p><p>RedRingRocky</p></td>
+						<td><p>Jamitrious</p><p>Cerby</p><p>Pooty</p></td>
+						<td>80</td>
+						<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
+					</tr>
+					<tr>
+						<td>Nerd Parade</td>
+						<td>CountingBodiesLikeSheep</td>
+						<td><p>CountingBodiesLikeSheep</p><p>JonSnow</p><p>RedRingRocky</p></td>
+						<td><p>Jamitrious</p><p>Cerby</p><p>Pooty</p></td>
+						<td>80</td>
+						<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		
+		
+		<div class="modal fade" id="createTeamModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Create A Team</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+				  </div>
+				  <div class="modal-body">
+					...
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+
+
+		<div class="modal fade" id="editTeamModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		  <div class="modal-dialog" role="document">
+			<div class="modal-content">
+			  <div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Edit A Team</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			  </div>
+			  <div class="modal-body">
+				...
+			  </div>
+			  <div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save changes</button>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		
+		
 	</div>
 	</div>
 <!--Bootstrap JS Dependencies-->
