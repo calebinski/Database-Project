@@ -95,8 +95,14 @@
 							<select class="form-control" id="teamSelect" name="team">
 							<!--These options must be populated by Php after a db query of available teams.-->
 								<?php
-									include 'populator.php';
-									teamDropDown();
+									$team_one = "team1";
+									$team_two = "team2";
+									$team_three = "team3";
+									$team_four = "team4";
+									echo "<option value='" + $team_one + "'>" + $team_one + "</option>";
+									echo "<option value='" + $team_two + "'>" + $team_two + "</option>";
+									echo "<option value='" + $team_three + "'>" + $team_three + "</option>";
+									echo "<option value='" + $team_four + "'>" + $team_four + "</option>";
 								?>
 							</select>
 						</div>
