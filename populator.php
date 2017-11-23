@@ -31,6 +31,7 @@ function heroDropDown(){
 }
 
 function teamDropDown(){
+	try {
 	$team_one = "team1";
 	$team_two = "team2";
 	$team_three = "team3";
@@ -39,6 +40,9 @@ function teamDropDown(){
 	echo "<option value='" . $team_two + "'>" . $team_two . "</option>";
 	echo "<option value='" . $team_three + "'>" . $team_three . "</option>";
 	echo "<option value='" . $team_four + "'>" . $team_four . "</option>";
+	} catch (Exception $e){
+		echo 'Caught exception: ', $e->getMessage(), "\n";
+	}
 }
 
 function gearDropDown(){
