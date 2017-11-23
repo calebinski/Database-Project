@@ -24,6 +24,7 @@
 			<div class="col-8"><h4>HEROES</h4></div>
 			<div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addHeroModal">Add a Hero</button></div>
 			<div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editHeroModal">Edit a Hero</button></div>
+                        <div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Temp Login button</button></div>
 		</div>
 		<div id="content" class="row">
 			<table class="table">
@@ -101,6 +102,54 @@
 				  <div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 					<button type="button" class="btn btn-primary">Save changes</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
+            
+            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Login</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+				  </div>
+				  <div class="modal-body">
+                                      <fieldset>
+                                          <form>
+                                              <label for="login">Email</label>
+                                              <input type="text" id="username" name="username"/>
+                                              <div class="clear"></div>
+                                          
+                                              <label for="password">Password</label>
+                                              <input type="password" id="password" name="password"/>
+                                              <div class="clear"></div>
+                                          
+                                              <br />
+                                          
+                                              <input type="submit" style="margin: -20px 0 0 287px;" class="button" name="commit" value="Login" id="login"/>
+                                              
+                                              <script type="text/javascript">
+                                                  $(document).ready(function(){
+                                                     $("#login").click(function() {
+                                                         $.ajax({
+                                                             type: "POST",
+                                                             url: "login.php",
+                                                             data:{
+                                                                 username: $username,
+                                                                 password: $password
+                                                             }
+                                                         })
+                                                     }); 
+                                                  });
+                                              </script>
+                                          </form>
+                                      </fieldset>
+				  </div>
+				  <div class="modal-footer">
+
 				  </div>
 				</div>
 			  </div>

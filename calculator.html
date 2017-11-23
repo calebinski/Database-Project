@@ -1,4 +1,15 @@
 <!doctype html>
+<?php
+    if(isset($_SESSION['user']))
+    {
+        $user = $_SESSION['user'];
+        $loggedin = TRUE;
+    }
+    else
+    {
+        $loggedin = FALSE;
+    }
+?>
 <html lang="en">
 <head>
 <title>Combat Calculator</title>
@@ -8,6 +19,17 @@
 <!--End Bootstrap CSS Dependency-->
 </head>
 <body>
+    <?php
+        if(isset($_SESSION['user']))
+        {
+            $user = $_SESSION['user'];
+            $loggedin = TRUE;
+        }
+        else
+        {
+            $loggedin = FALSE;
+        }
+    ?>
 	<div class="row">
 	<div id="navigation" class="col-2">
 		<div class="list-group">
@@ -38,12 +60,47 @@
 			<div class="col-6">
 				<div class="container-fluid"><button type="button" class="btn btn-primary">Choose a Team</button></div>
 				<div class="container-fluid"><button type="button" class="btn btn-primary">Choose a Hero</button></div>
+                                <div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Temp Login button</button></div>                                
 			</div>
 			<div class="row">
 				<button type="button" class="btn btn-primary float-left">Calculate Chances of Success</button>
 			</div>
 		</div>
-		
+            
+            
+		<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			  <div class="modal-dialog" role="document">
+				<div class="modal-content">
+				  <div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Login</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					  <span aria-hidden="true">&times;</span>
+					</button>
+				  </div>
+				  <div class="modal-body">
+                                      <fieldset>
+                                          <legend>Login</legend>
+                                          
+                                          <label for="login">Email</label>
+                                          <input type="text" id="username" name="username"/>
+                                          <div class="clear"></div>
+                                          
+                                          <label for="password">Password</label>
+                                          <input type="password" id="password" name="password"/>
+                                          <div class="clear"></div>
+                                          
+                                          <br />
+                                          
+                                          <input type="submit" style="margin: -20px 0 0 287px;" class="button" name="commit" value="Login"/>
+                                      </fieldset>
+				  </div>
+				  <div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				  </div>
+				</div>
+			  </div>
+			</div>
 	</div>
 	</div>
 <!--Bootstrap JS Dependencies-->
