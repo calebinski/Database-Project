@@ -14,12 +14,12 @@
 	<div class="row">
 	<div id="navigation" class="col-2">
 		<div class="list-group">
-			<a href="index.html" class="list-group-item active">Home</a>
+			<a href="index.php" class="list-group-item active">Home</a>
 			<a href="heroes.php" class="list-group-item">Heroes</a>
-			<a href="teams.html" class="list-group-item">Teams</a>
-			<a href="gear.html" class="list-group-item">Gear</a>
-			<a href="enemies.html" class="list-group-item">Enemies</a>
-			<a href="calculator.html" class="list-group-item">Calculator</a>
+			<a href="teams.php" class="list-group-item">Teams</a>
+			<a href="gear.php" class="list-group-item">Gear</a>
+			<a href="enemies.php" class="list-group-item">Enemies</a>
+			<a href="calculator.php" class="list-group-item">Calculator</a>
 		</div>
 	</div>
 	<div id="main" class="col-10">
