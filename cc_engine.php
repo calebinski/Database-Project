@@ -1,19 +1,53 @@
 <?php
 /*Verify that the user is logged in. If not, display login form.*/
 
+var $sessionUserID = 2;
+
 function heroDropDown(){
-	
+	$dataLayer = new DataLayer;
+	$data = $dataLayer.getHeroNames();
+	while ($hero = $data->fetch_assoc()){
+		echo "<option>" . $hero['Character_Name'] . "</option>";	
+	}
 }
 
 function teamDropDown($group){
-	
+	$dataLayer = new DataLayer;
+	$data = $dataLayer.getTeamNames();
+	while ($team = $data->fetch_assoc()){
+		echo "<option>" . $team['Team_Name'] . "</option>";	
+	}
 }
 
 function gearByTypeDropDown(){
-	
+	$dataLayer = new DataLayer;
+	$data = $dataLayer.getGearNamesbyType();
+	while ($gear = $data->fetch_assoc()){
+		echo "<option>" . $gear['Gear_Name'] . "</option>";	
+	}
 }
 
 function enemyByTypeDropDown(){
+	$dataLayer = new DataLayer;
+	$data = $dataLayer.getEnemyNamesbyType();
+	while ($enemy = $data->fetch_assoc()){
+		echo "<option>" . $enemy['Enemy_Name'] . "</option>";	
+	}
+}
+
+function displayHeroes(){
+	
+}
+
+function displayTeams($group){
+	
+}
+
+function displayGearbyType(){
+	
+}
+
+function displayEnemiesbyType(){
 	
 }
 
@@ -36,62 +70,73 @@ class DataLayer {
 	}
 	
 	function getTeams($group){
-		
+		return sendQuery('CALL GetTeams()');
 	}
 	
 	function getTeamNames($group){
-		
+		return sendQuery('CALL GetTeamNames()');
 	}
 	
-	function getHeroes(){
-		
+	function getHeroes($userID){
+		return sendQuery('CALL GetHeroes()');
 	}
 	
-	function getHeroNames(){
-		
+	function getHeroNames($userID){
+		return sendQuery('CALL GetHeroNames()');
 	}
 
 	function getGearbyType($type) {
-		
+		return sendQuery('CALL GetGearByType()');
+
 	}
 	
 	function getGearNamesbyType($type) {
-		
+		return sendQuery('CALL GetGearNamesByType()');
+
 	}
 	
 	function getEnemiesbyType($type){
+		return sendQuery('CALL GetEnemiesByType()');
 		
 	}
 	
 	function getEnemyNamesbyType($type){
+		return sendQuery('CALL GetEnemyNamesByType()');
 		
 	}
 	
 	function addHero($heroName, $heroLevel, $heroClass, $team){
+		return sendQuery('CALL AddHero()');
 	
 	}
 
 	function editHero($heroName, $heroLevel, $heroClass, $team){
+		return sendQuery('CALL EditHero()');
 		
 	}
 
-	function deleteHero($userID, $heroName){
+	function deleteHero($heroName){
+		return sendQuery('CALL DeleteHero()');
 		
 	}
 
-	function createTeam($userID, $teamName, $activeHero){
+	function createTeam($teamName, $activeHero){
+		return sendQuery('CALL CreateTeam()');
 		
 	}
 
-	function joinTeam($userID, $teamName){
+	function joinTeam($teamName){
+		return sendQuery('CALL JoinTeam()');
 		
 	}
 
-	function editTeam($userID, $teamName, $newTeamName, $newActiveHero){
+	function editTeam($teamName, $newTeamName, $newActiveHero){
+		return sendQuery('CALL EditTeam()');
 		
 	}
 
-	function deleteTeam($userID, $teamName){
+	function deleteTeam($teamName){
+		return sendQuery('CALL DeleteTeam()');
 		
 	}
 }
