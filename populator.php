@@ -34,7 +34,7 @@ function heroDropDown(){
 }
 
 function teamDropDown(){
-	$teams = queryMysql("SELECT Team_Name FROM teams");
+	$teams = queryMysql("SELECT Team_Name FROM team");
 	while ($team = $teams->fetch_assoc()){
 		echo "<option>" . $team['Team_Name'] . "</option>";	
 	}
