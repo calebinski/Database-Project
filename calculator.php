@@ -8,7 +8,7 @@
     else
     {
         $loggedin = FALSE;
-		header("Location: candicejohnson.net/login.php");
+		header("Location: login.php");
     }
 ?>
 <html lang="en">
