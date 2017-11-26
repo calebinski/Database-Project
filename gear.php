@@ -36,32 +36,7 @@
 						
 						
 						
-						<table class="table">
-			 <thead>
-				<tr>
-					<th scope="col">Name</th>
-					<th scope="col">Type</th>
-					<th scope="col">Stats</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Nerd Parade</td>
-					<td>Helmet</td>
-					<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-				</tr>
-				<tr>
-					<td>Nerd Parade</td>
-					<td>Helmet</td>
-					<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-				</tr>
-				<tr>
-					<td>Nerd Parade</td>
-					<td>Helmet</td>
-					<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-				</tr>
-			</tbody>
-		</table>
+						
 						
 						
 						
@@ -81,32 +56,7 @@
 					
 					
 					
-					<table class="table">
-			 <thead>
-				<tr>
-					<th scope="col">Name</th>
-					<th scope="col">Type</th>
-					<th scope="col">Stats</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Nerd Parade</td>
-					<td>Shoulders</td>
-					<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-				</tr>
-				<tr>
-					<td>Nerd Parade</td>
-					<td>Shoulders</td>
-					<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-				</tr>
-				<tr>
-					<td>Nerd Parade</td>
-					<td>Shoulders</td>
-					<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-				</tr>
-			</tbody>
-		</table>
+					
 					
 					
 					
@@ -126,32 +76,7 @@
 					
 					
 					
-					<table class="table">
-			 <thead>
-				<tr>
-					<th scope="col">Name</th>
-					<th scope="col">Type</th>
-					<th scope="col">Stats</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>Nerd Parade</td>
-					<td>Legs</td>
-					<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-				</tr>
-				<tr>
-					<td>Nerd Parade</td>
-					<td>Legs</td>
-					<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-				</tr>
-				<tr>
-					<td>Nerd Parade</td>
-					<td>Legs</td>
-					<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-				</tr>
-			</tbody>
-		</table>
+				
 					
 					
 					

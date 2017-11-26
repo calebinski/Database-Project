@@ -26,46 +26,7 @@
             <!--<div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal" data-backdrop="static" data-keyboard="false">Temp Login button</button></div>-->
 		</div>
 		<div id="content" class="row">
-			<table class="table">
-				 <thead>
-					<tr>
-						<th scope="col">Hero Name</th>
-						<th scope="col">Class</th>
-						<th scope="col">Level</th>
-						<th scope="col">Stats</th>
-						<th scope="col">Gear</th>
-						<th scope="col">Team</th>
-						<th scope="col"></th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Mark</td>
-						<td>Mage</td>
-						<td>85</td>
-						<td><p>Intellect: 100</p><p>Strength: 30</p><p>Armor: 50</p></td>
-						<td><p>Helmet: Blahhhh</p><p>Chest: asdfasd</p><p>Legs: sdfgsdff</p></td>
-						<td>Not part of a team.</td>
-						<!--<td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#____editModal">Edit</button></td>-->
-					</tr>
-					<tr>
-						<td>Jacob</td>
-						<td>Warrior</td>
-						<td>90</td>
-						<td><p>Intellect: 100</p><p>Strength: 30</p><p>Armor: 50</p></td>
-						<td><p>Helmet: Blahhhh</p><p>Chest: asdfasd</p><p>Legs: sdfgsdff</p></td>
-						<td>Nerd Parade</td>
-					</tr>
-					<tr>
-						<td>Larry</td>
-						<td>the Bird</td>
-						<td>80</td>
-						<td><p>Intellect: 100</p><p>Strength: 30</p><p>Armor: 50</p></td>
-						<td><p>Helmet: Blahhhh</p><p>Chest: asdfasd</p><p>Legs: sdfgsdff</p></td>
-						<td>Art of War</td>
-					</tr>
-				</tbody>
-			</table>
+			
 		</div>
 		
 		<div class="modal fade" id="addHeroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -78,7 +39,7 @@
 					</button>
 				  </div>
 				  <div class="modal-body">
-					<form action="userQueries.php" method="post">
+					<form>
 						<div class="form-group">
 							<label for="heroName">Hero Name:</label>
 							<input type="text" class="form-control" id="heroName" aria-describedby="" placeholder="Enter hero name.">
@@ -89,21 +50,29 @@
 						</div>
 						<div class="form-group">
 							<label for="heroClass">Class:</label>
-							<input type="text" class="form-control" id="heroClass" aria-describedby="" placeholder="Enter hero name.">
+							<select class="form-control" id="heroClass" name="class">
+								<option>Warrior</option>
+								<option>Assassin</option>
+								<option>Paladin</option>
+								<option>Mage</option>
+								<option>Cleric</option>
+								<option>Thief</option>
+								<option>Druid</option>
+							</select>
 						</div>
 						<div class="form-group">
 							<label for="teamSelect">Add to Team:</label>
 							<select class="form-control" id="teamSelect" name="team">
 							<!--These options must be populated by Php after a db query of available teams.-->
 								<?php
-									include 'populator.php';
+									include 'cc_engine.php';
 									teamDropDown();
 								?>
 							</select>
 						</div>
 						<div class="modal-footer">
 							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-							<input type="submit" class="btn btn-primary" value="Add Hero"></input>
+							<button type="submit" class="btn btn-primary">Add Hero</button>
 						</div>
 					</form>
 				  </div>

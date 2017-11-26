@@ -27,44 +27,7 @@
 			<div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editTeamModal">Edit a Team</button></div>
 		</div>
 		<div id="content" class="container-fluid">
-			<table class="table">
-				 <thead>
-					<tr>
-						<th scope="col">Team Name</th>
-						<th scope="col">Team Leader</th>
-						<th scope="col">Members</th>
-						<th scope="col">Active Heroes</th>
-						<th scope="col">Average Level</th>
-						<th scope="col">Combined Stats</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td>Nerd Parade</td>
-						<td>CountingBodiesLikeSheep</td>
-						<td><p>CountingBodiesLikeSheep</p><p>JonSnow</p><p>RedRingRocky</p></td>
-						<td><p>Jamitrious</p><p>Cerby</p><p>Pooty</p></td>
-						<td>80</td>
-						<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-					</tr>
-					<tr>
-						<td>Nerd Parade</td>
-						<td>CountingBodiesLikeSheep</td>
-						<td><p>CountingBodiesLikeSheep</p><p>JonSnow</p><p>RedRingRocky</p></td>
-						<td><p>Jamitrious</p><p>Cerby</p><p>Pooty</p></td>
-						<td>80</td>
-						<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-					</tr>
-					<tr>
-						<td>Nerd Parade</td>
-						<td>CountingBodiesLikeSheep</td>
-						<td><p>CountingBodiesLikeSheep</p><p>JonSnow</p><p>RedRingRocky</p></td>
-						<td><p>Jamitrious</p><p>Cerby</p><p>Pooty</p></td>
-						<td>80</td>
-						<td><p>Intellect: 357</p><p>Strength: 75</p><p>Armor: 90</p></td>
-					</tr>
-				</tbody>
-			</table>
+			
 		</div>
 		
 		
@@ -78,11 +41,22 @@
 					</button>
 				  </div>
 				  <div class="modal-body">
-					...
-				  </div>
-				  <div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+						<form>
+							<div class="form-group">
+							<label for="teamSelect">Select a Team:</label>
+							<select class="form-control" id="teamSelect" name="team">
+							<!--These options must be populated by Php after a db query of available teams.-->
+								<?php
+									include 'populator.php';
+									teamDropDown();
+								?>
+							</select>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-primary">Join</button>
+						</div>
+						</form>
 				  </div>
 				</div>
 			  </div>
@@ -98,14 +72,26 @@
 					</button>
 				  </div>
 				  <div class="modal-body">
-					
-					
-					
-					
-				  </div>
-				  <div class="modal-footer">
+					<form>
+					<div class="form-group">
+						<label for="teamName">Team Name:</label>
+						<input type="text" class="form-control" id="teamName" aria-describedby="" placeholder="Enter team name.">
+					</div>
+					<div class="form-group">
+						<label for="heroSelect">Which hero would you like to use in this team?</label>
+						<select class="form-control" id="heroSelect" name="hero">
+						<!--These options must be populated by Php after a db query of available teams.-->
+							<?php
+								include 'populator.php';
+								heroDropDown();
+							?>
+						</select>
+					</div>
+					<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="button" class="btn btn-primary">Create</button>
+				  </div>
+					</form>
 				  </div>
 				</div>
 			  </div>
@@ -122,12 +108,38 @@
 				</button>
 			  </div>
 			  <div class="modal-body">
-				...
-			  </div>
-			  <div class="modal-footer">
-				<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
-			  </div>
+				<form>
+					<div class="form-group">
+						<label for="editTeamSelect">Which team would you like to change?</label>
+						<select class="form-control" id="editTeamSelect" name="editTeam">
+						<!--These options must be populated by Php after a db query of available teams.-->
+							<?php
+								include 'cc_engine.php';
+								teamDropDown();
+							?>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="teamName">New Team Name:</label>
+						<input type="text" class="form-control" id="teamName" aria-describedby="" placeholder="Enter team name.">
+					</div>
+					<div class="form-group">
+						<label for="newHeroSelect">Choose New Active Hero:</label>
+						<select class="form-control" id="newHeroSelect" name="newHero">
+						<!--These options must be populated by Php after a db query of available teams.-->
+							<?php
+								include 'cc_engine.php';
+								heroDropDown();
+							?>
+						</select>
+					</div>
+					<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Delete Team</button>
+					<button type="button" class="btn btn-primary">Save Team</button>
+					</div>
+				</form>
+				</div>
 			</div>
 		  </div>
 		</div>

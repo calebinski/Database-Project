@@ -1,6 +1,6 @@
 <?php
 require_once 'sqlConnect.php';
-echo "<div class='main'><h3>Please enter your details to log in.</h3>";
+echo "<div class='main'><h3>Please login to access this feature.</h3>";
 $error = $user = $pass = "";
 
 if (isset($_POST['username']))
@@ -22,7 +22,7 @@ if (isset($_POST['username']))
         {
             $_SESSION['username'] = $user;
             $_SESSION['password'] = $pass;
-            die("You are now logged in. Please <a href='members.php?view=$user'>click here>/a> to continue.<br><br>");
+            die("You are now logged in. Please <a href='index.php?view=$user'>click here>/a> to continue.<br><br>");
         }
     }
 }

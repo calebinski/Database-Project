@@ -23,6 +23,7 @@ function editHeroModal(){
 }
 
 function editTeamModal(){
+	$result = queryMysql("");
 	
 }
 
