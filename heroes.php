@@ -23,6 +23,7 @@
 		<div id="header" class="row">
 			<div class="col-8"><h4>HEROES</h4></div>
 			<div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addHeroModal">Add a Hero</button></div>
+                        <div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Temp Login button</button></div>
 		</div>
 		<div id="content" class="row">
 			<table class="table">
@@ -150,6 +151,39 @@
 							<input type="submit" class="btn btn-primary" value="Add Hero"></input>
 						</div>
 					</form>
+				  </div>
+                                    
+                                    <div class="modal-body">
+                                      <fieldset>
+                                          <form>
+                                              <label for="login">Email</label>
+                                              <input type="text" id="username" name="username"/>
+                                              <div class="clear"></div>
+                                          
+                                              <label for="password">Password</label>
+                                              <input type="password" id="password" name="password"/>
+                                              <div class="clear"></div>
+                                          
+                                              <br />
+                                          
+                                              <input type="submit" style="margin: -20px 0 0 287px;" class="button" name="commit" value="Login" id="login"/>
+                                              
+                                              <script type="text/javascript">
+                                                  $(document).ready(function(){
+                                                     $("#login").click(function() {
+                                                         $.ajax({
+                                                             type: "POST",
+                                                             url: "login.php",
+                                                             data:{
+                                                                 username: $username,
+                                                                 password: $password
+                                                             }
+                                                         })
+                                                     }); 
+                                                  });
+                                              </script>
+                                          </form>
+                                      </fieldset>
 				  </div>
 				</div>
 			  </div>
