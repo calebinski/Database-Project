@@ -8,6 +8,7 @@
     else
     {
         $loggedin = FALSE;
+		header("Location: candicejohnson.net/login.php");
     }
 ?>
 <html lang="en">

@@ -23,7 +23,7 @@
 		<div id="header" class="row">
 			<div class="col-8"><h4>HEROES</h4></div>
 			<div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addHeroModal">Add a Hero</button></div>
-            <div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal">Temp Login button</button></div>
+            <!--<div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#loginModal" data-backdrop="static" data-keyboard="false">Temp Login button</button></div>-->
 		</div>
 		<div id="content" class="row">
 			<table class="table">
@@ -115,13 +115,23 @@
 			  <div class="modal-dialog" role="document">
 				<div class="modal-content">
 				  <div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Add a Hero</h5>
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-					  <span aria-hidden="true">&times;</span>
-					</button>
+					<h5 class="modal-title" id="exampleModalLabel">Login to access this page.</h5>
 				  </div>
 				  <div class="modal-body">
-                                      <fieldset>
+						<form>
+							<div class="form-group">
+								<label for="username">Username:</label>
+								<input type="text" class="form-control" id="username" aria-describedby="" placeholder="Enter username.">
+							</div>
+							<div class="form-group">
+								<label for="password">Password:</label>
+								<input type="text" class="form-control" id="password" aria-describedby="" placeholder="Enter password.">
+							</div>
+							<div class="modal-footer">
+								<input type="submit" class="btn btn-primary" value="Login"></input>
+							</div>
+						</form>
+                                      <!--<fieldset>
                                           <form>
                                               <label for="login">Email</label>
                                               <input type="text" id="username" name="username"/>
@@ -150,7 +160,7 @@
                                                   });
                                               </script>
                                           </form>
-                                      </fieldset>
+                                      </fieldset>-->
 				  </div>
                                     
                                     
