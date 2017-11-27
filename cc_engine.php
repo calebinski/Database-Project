@@ -2,6 +2,10 @@
 /*Verify that the user is logged in. If not, display login form.*/
 
 var $sessionUserID = 2;
+$dbhost = '136.61.234.100';
+$dbname = 'dbapp';
+$dbuser = 'dbapp';
+$dbpass = 'paswd135';
 
 function heroDropDown(){
 	$dataLayer = new DataLayer;
@@ -54,7 +58,7 @@ function displayEnemiesbyType(){
 class DataLayer {
 	
 	var $connection;
-	
+		
 	function __construct($dbhost, $dbname, $dbuser, $dbpass){
 		$connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 		if ($connection->connect_error){
@@ -62,7 +66,7 @@ class DataLayer {
 		}
 	}
 	
-	function sendQuery($query){
+	public function sendQuery($query){
     global $connection;
     $result = $connection->query($query);
     if (!$result) {die($connection->error);}
