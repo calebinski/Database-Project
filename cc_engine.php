@@ -224,6 +224,11 @@ function displayTeams(){
 }
 
 function displayGearbyType($type){
+    global $connection;
+    global $dbhost;
+    global $dbuser;
+    global $dbpass;
+    global $dbname;
 	$data = getGearByType($type);
 	while ($gear = $data->fetch_assoc()){
 	    echo "<tr>";
@@ -237,6 +242,9 @@ function displayGearbyType($type){
 		echo "<td>" . $gear['Magic_Resist'] . "</td>";	
 		echo "</tr>";
 	}
+	mysqli_close($connection);
+	    $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+        if ($connection->connect_error) {die($connection->connect_error);}
 }
 
 function displayEnemiesbyType(){
