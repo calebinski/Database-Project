@@ -256,8 +256,8 @@ function displayEnemiesbyType($type){
 	$data = getEnemiesByType($type);
 	while ($enemy = $data->fetch_assoc()){
 	    echo "<tr>";
-		echo "<td>" . $enemy['Gear_Name'] . "</td>";	
-		echo "<td>" . $enemy['Gear_Type'] . "</td>";	
+		echo "<td>" . $enemy['Enemy_Name'] . "</td>";	
+		echo "<td>" . $enemy['Enemy_Type'] . "</td>";	
 		echo "<td>" . $enemy['Intellect'] . "</td>";	
 		echo "<td>" . $enemy['Strength'] . "</td>";	
 		echo "<td>" . $enemy['Agility'] . "</td>";	
