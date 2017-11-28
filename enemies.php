@@ -42,7 +42,7 @@
 						</thead>
 						<tbody>
 							<?php
-								displayGearbyType("'Undead'");
+								displayEnemiesbyType("'Undead'");
 							?>
 						</tbody>
 					</table>
@@ -63,7 +63,7 @@
 						</thead>
 						<tbody>
 							<?php
-								displayGearbyType("'Humanoid'");
+								displayEnemiesbyType("'Humanoid'");
 							?>
 						</tbody>
 					</table>
