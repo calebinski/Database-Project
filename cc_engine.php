@@ -247,7 +247,7 @@ function displayGearbyType($type){
         if ($connection->connect_error) {die($connection->connect_error);}
 }
 
-function displayEnemiesbyType(){
+function displayEnemiesbyType($type){
 	global $connection;
     global $dbhost;
     global $dbuser;
