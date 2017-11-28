@@ -33,6 +33,34 @@
 					</div>
 				</div>
 				<div id="content" class="row">
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Hero Name</th>
+								<th scope="col">Hero Level</th>
+								<th scope="col">Hero Class</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<tr>
+								<td>Pauriel</td>
+								<td>89</td>
+								<td>Warrior</td>
+								<td>5674567</td>
+								<td>67867</td>
+								<td>455645</td>
+								<td>456456</td>
+								<td>34534</td>
+								<td>345345</td>
+							</tr>
+						</tbody>
+					</table>	
 				</div>
 				<div class="modal fade" id="addHeroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog" role="document">
@@ -78,7 +106,7 @@
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
-								<h5 class="modal-title" id="exampleModalLabel">Login to access this page.</h5>
+								<h5 class="modal-title" id="exampleModalLabel">Edit a Hero</h5>
 							</div>
 							<div class="modal-body">
 								<form>

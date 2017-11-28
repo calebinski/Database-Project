@@ -41,9 +41,13 @@ function getTeamNamesByOwner($ownerID){
 	return sendQuery('CALL GetTeamNamesByOwner(' . $ownerID . ')');
 }
 
-//function getHeroes($userID){
-//	return sendQuery('CALL GetHeroes()');
-//}
+function getHeroes($userID){
+	return sendQuery('CALL GetCharacters(' . $userID . ')');
+}
+
+function getHeroStats($userID, $charName){
+	return sendQuery('CALL GetCharacterStats(' . $userID . ', ' . $charName . ')');
+}
 
 function getHeroNames($userID){
 	return sendQuery('CALL GetCharacterNamesByID(' . $userID . ')');
@@ -140,8 +144,22 @@ function enemyByTypeDropDown(){
 	}
 }
 
-function displayHeroes(){
-	
+function displayHeroes($userID){
+	$data = getHeroes($userID);
+	while ($hero = $data->fetch_assoc()){
+		$heroStats = getHeroStats($userID, $hero['Character_Name']);
+		echo "<tr>";
+		echo "<td>" . $hero['Character_Name'] . "</td>";
+		echo "<td>" . $hero['Character_Level'] . "</td>";
+		echo "<td>" . $hero['Character_Class'] . "</td>";
+		echo "<td>" . $heroStats['Intellect'] . "</td>";
+		echo "<td>" . $heroStats['Strength'] . "</td>";
+		echo "<td>" . $heroStats['Agility'] . "</td>";
+		echo "<td>" . $heroStats['Stamina'] . "</td>";
+		echo "<td>" . $heroStats['Armor'] . "</td>";
+		echo "<td>" . $heroStats['Magic_Resist'] . "</td>";
+		echo "</tr>";
+	}
 }
 
 function displayTeams(){
