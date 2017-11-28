@@ -48,17 +48,9 @@
 							</tr>	
 						</thead>
 						<tbody>
-							<tr>
-								<td>Pauriel</td>
-								<td>89</td>
-								<td>Warrior</td>
-								<td>5674567</td>
-								<td>67867</td>
-								<td>455645</td>
-								<td>456456</td>
-								<td>34534</td>
-								<td>345345</td>
-							</tr>
+							<?php
+								displayHeroes(10);
+							?>
 						</tbody>
 					</table>	
 				</div>
