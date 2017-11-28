@@ -29,6 +29,7 @@
 					</div>
 					<div class="col">
 						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addHeroModal">Add a Hero</button>
+						<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editHeroModal">Edit a Hero</button>
 					</div>
 				</div>
 				<div id="content" class="row">
@@ -64,15 +65,6 @@
 											<option>Druid</option>
 										</select>
 									</div>
-									<div class="form-group">
-										<label for="teamSelect">Add to Team:</label>
-										<select class="form-control" id="teamSelect" name="team">
-										<!--These options must be populated by Php after a db query of available teams.-->
-										<?php
-											teamDropDown();
-										?>
-										</select>
-									</div>
 									<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 										<button type="submit" class="btn btn-primary">Add Hero</button>
@@ -82,7 +74,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal fade" id="editHeroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog" role="document">
 						<div class="modal-content">
 							<div class="modal-header">
@@ -91,15 +83,36 @@
 							<div class="modal-body">
 								<form>
 									<div class="form-group">
-										<label for="username">Username:</label>
-										<input type="text" class="form-control" id="username" aria-describedby="" placeholder="Enter username.">
+										<label for="chooseHero">Which hero would you like to change?</label>
+										<select class="form-control" id="chooseHero" name="class">
+											<?php
+												heroDropDown($sessionUserID);
+											?>
+										</select>
 									</div>
 									<div class="form-group">
-										<label for="password">Password:</label>
-										<input type="text" class="form-control" id="password" aria-describedby="" placeholder="Enter password.">
+										<label for="newName">New Name:</label>
+										<input type="text" class="form-control" id="newName" aria-describedby="" placeholder="Enter new hero name.">
+									</div>
+									<div class="form-group">
+										<label for="newHeroLevel">New Level:</label>
+										<input type="number" class="form-control" id="newHeroLevel" aria-describedby="" placeholder="Enter new hero level." min="1" max="100">
+									</div>
+									<div class="form-group">
+										<label for="newHeroClass">New Class:</label>
+										<select class="form-control" id="newHeroClass" name="class">
+											<option>Warrior</option>
+											<option>Assassin</option>
+											<option>Paladin</option>
+											<option>Mage</option>
+											<option>Cleric</option>
+											<option>Thief</option>
+											<option>Druid</option>
+										</select>
 									</div>
 									<div class="modal-footer">
-										<input type="submit" class="btn btn-primary" value="Login"></input>
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+										<button type="submit" class="btn btn-primary">Add Hero</button>
 									</div>
 								</form>
 							</div>
