@@ -62,7 +62,7 @@
 						</thead>
 						<tbody>
 							<?php
-								displayGearbyType("'Shoulder'");();
+								displayGearbyType("'Shoulder'");
 							?>
 						</tbody>
 					</table>
