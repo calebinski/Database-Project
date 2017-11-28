@@ -1,7 +1,7 @@
+<!DOCTYPE html>
 <?php
 	include 'cc_engine.php';
 ?>
-<!DOCTYPE html>
 <html lang="en">
 	<head>
 		<title>Combat Calculator</title>

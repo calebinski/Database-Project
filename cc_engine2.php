@@ -25,74 +25,94 @@ function sendQuery($query){
     return $result;
 }
 
-function getTeams($group){
+function getTeams(){
 	return sendQuery('CALL GetTeams()');
 }
 
-function getTeamNames($group){
+function getTeamsByOwnerID($ownerID){
+	return sendQuery('CALL GetTeamsByOwnerID(' . $ownerID . ')');
+}
+
+function getTeamsByMemberID($userID){
+	return sendQuery('CALL GetTeamsByMemberID(' . $userID . ')');
+}
+
+function getTeamNames(){
 	return sendQuery('CALL GetTeamNames()');
 }
 
-function getHeroes($userID){
-	return sendQuery('CALL GetHeroes()');
+function getTeamNamesByMember($userID){
+	return sendQuery('CALL GetTeamNamesByMember(' . $userID . ')');
 }
+
+function getTeamNamesByOwner($ownerID){
+	return sendQuery('CALL GetTeamNamesByOwner(' . $ownerID . ')');
+}
+
+//function getHeroes($userID){
+//	return sendQuery('CALL GetHeroes()');
+//}
 
 function getHeroNames($userID){
-	return sendQuery('CALL GetHeroNames()');
+	return sendQuery('CALL GetCharacterNamesByID(' . $userID . ')');
 }
 
-function getGearbyType($type) {
-	return sendQuery('CALL GetGearByType()');
-
-}
-
-function getGearNamesbyType($type) {
-	return sendQuery('CALL GetGearNamesByType()');
+function getGearByType($type) {
+	return sendQuery('CALL GetGearByType(' . $type . ')');
 
 }
 
-function getEnemiesbyType($type){
-	return sendQuery('CALL GetEnemiesByType()');
+function getGearNamesByType($type) {
+	return sendQuery('CALL GetGearNamesByType(' . $type . ')');
+
+}
+
+function getEnemiesByType($type){
+	return sendQuery('CALL GetEnemiesByType(' . $type . ')');
 	
 }
 
-function getEnemyNamesbyType($type){
-	return sendQuery('CALL GetEnemyNamesByType()');
+function getEnemyNamesByType($type){
+	return sendQuery('CALL GetEnemyNamesByType(' . $type . ')');
 	
 }
 
-function addHero($heroName, $heroLevel, $heroClass, $team){
-	return sendQuery('CALL AddHero()');
+function addHero($userID, $heroName, $heroLevel, $heroClass, $int, $str, $agi, $sta, $arm, $mar){
+	return sendQuery('CALL AddHero(' . $userID . ', ' . $heroName . ', ' . $heroLevel . ', ' . $heroClass . ', ' . $int . ', ' . $str . ', ' . $agi . ', ' . $sta . ', ' . $arm . ', ' . $mar')');
 
 }
 
-function editHero($heroName, $heroLevel, $heroClass, $team){
-	return sendQuery('CALL EditHero()');
+function editHero($userID, $newHeroName, $oldHeroName, $heroLevel, $heroClass, $int, $str, $agi, $sta, $arm, $mar){
+	return sendQuery('CALL EditHero(' . $userID . ', ' . $newheroName . ', ' . $oldheroName . ', ' . $heroLevel . ', ' . $heroClass . ', ' . $int . ', ' . $str . ', ' . $agi . ', ' . $sta . ', ' . $arm . ', ' . $mar')');
 	
 }
 
-function deleteHero($heroName){
-	return sendQuery('CALL DeleteHero()');
+function deleteHero($userID, $heroName){
+	return sendQuery('CALL DeleteHero(' . $userID . ', ' . $heroName . ')');
 	
 }
 
-function createTeam($teamName, $activeHero){
-	return sendQuery('CALL CreateTeam()');
+function createTeam($teamName, $ownerID){
+	return sendQuery('CALL CreateTeam(' . $teamName . ', ' . $ownerID . ')');
 	
 }
 
-function joinTeam($teamName){
-	return sendQuery('CALL JoinTeam()');
+function joinTeam($teamID, $userID, $heroName){
+	return sendQuery('CALL JoinTeam(' . $teamID . ', ' . $userID . ', ' . $heroName . ')');
 	
 }
 
-function editTeam($teamName, $newTeamName, $newActiveHero){
-	return sendQuery('CALL EditTeam()');
+function editTeamName($oldTeamName, $newTeamName){
+	return sendQuery('CALL EditTeamName(' . $oldTeamName . ', ' . $newTeamName . ')');
 	
+}
+
+function editTeamOwner($newOwnerID, $oldOwnerID, $teamID){
+	return sendQuery('CALL EditTeamOwner(' . $newOwnerID . ', ' . $oldOwnerID . ', ' . $itemID . ')');
 }
 
 function deleteTeam($teamName){
-	return sendQuery('CALL DeleteTeam()');
+	return sendQuery('CALL DeleteTeam('. $teamName . ')');
 	
 }
 

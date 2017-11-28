@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <?php
 require_once 'sqlConnect.php';
 echo "<div class='main'><h3>Please login to access this feature.</h3>";

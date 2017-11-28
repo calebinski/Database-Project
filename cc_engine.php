@@ -1,7 +1,7 @@
 <?php
 /*Verify that the user is logged in. If not, display login form.*/
 
-var $sessionUserID = 2;
+$sessionUserID = 2;
 $dbhost = '136.61.234.100';
 $dbname = 'dbapp';
 $dbuser = 'dbapp';
