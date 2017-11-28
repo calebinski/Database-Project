@@ -24,6 +24,171 @@
 			</div>
 			<div id="main" class="col-10">
 				<h4>Enemies</h4>	
+				
+				<h4>Undeads</h4>
+				<div id="content" class="container-fluid">
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayGearbyType("'Undead'");
+							?>
+						</tbody>
+					</table>
+					
+				<h4>Humanoids</h4>
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayGearbyType("'Humanoid'");
+							?>
+						</tbody>
+					</table>
+				<h4>Beasts</h4>
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayEnemiesbyType("'Beast'");
+							?>
+						</tbody>
+					</table>
+					
+				<h4>Demons</h4>
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayEnemiesbyType("'Demon'");
+							?>
+						</tbody>
+					</table>
+				<h4>Elementals</h4>
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayEnemiesbyType("'Elemental'");
+							?>
+						</tbody>
+					</table>
+					<h4>Giants</h4>
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayEnemiesbyType("'Giant'");
+							?>
+						</tbody>
+					</table>
+					<h4>Mechanicals</h4>
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayEnemiesbyType("'Mech'");
+							?>
+						</tbody>
+					</table>
+					<h4>Dragons</h4>
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Name</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayEnemiesbyType("'Dragon'");
+							?>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 		<!--Bootstrap JS Dependencies-->

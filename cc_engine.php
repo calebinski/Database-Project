@@ -248,7 +248,27 @@ function displayGearbyType($type){
 }
 
 function displayEnemiesbyType(){
-	
+	global $connection;
+    global $dbhost;
+    global $dbuser;
+    global $dbpass;
+    global $dbname;
+	$data = getEnemiesByType($type);
+	while ($enemy = $data->fetch_assoc()){
+	    echo "<tr>";
+		echo "<td>" . $enemy['Gear_Name'] . "</td>";	
+		echo "<td>" . $enemy['Gear_Type'] . "</td>";	
+		echo "<td>" . $enemy['Intellect'] . "</td>";	
+		echo "<td>" . $enemy['Strength'] . "</td>";	
+		echo "<td>" . $enemy['Agility'] . "</td>";	
+		echo "<td>" . $enemy['Stamina'] . "</td>";	
+		echo "<td>" . $enemy['Armor'] . "</td>";	
+		echo "<td>" . $enemy['Magic_Resist'] . "</td>";	
+		echo "</tr>";
+	}
+	mysqli_close($connection);
+	    $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+        if ($connection->connect_error) {die($connection->connect_error);}
 }
 
 ?>

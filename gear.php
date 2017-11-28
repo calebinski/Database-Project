@@ -36,7 +36,7 @@
 								<th scope="col">Agility</th>
 								<th scope="col">Stamina</th>
 								<th scope="col">Armor</th>
-								<th scope="col">Magic_Resist</th>
+								<th scope="col">Magic Resist</th>
 							</tr>	
 						</thead>
 						<tbody>
