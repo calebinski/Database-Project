@@ -24,6 +24,130 @@
 			</div>
 			<div id="main" class="col-10">
 				<h1>Gear</h1>
+				<h4>Head</h4>
+				<div id="content" class="container-fluid">
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Gear</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayGearbyType("'Head'");
+							?>
+						</tbody>
+					</table>
+					
+				<h4>Shoulder</h4>
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Gear</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayGearbyType("'Shoulder'");();
+							?>
+						</tbody>
+					</table>
+				<h4>Chest</h4>
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Gear</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayGearbyType("'Chest'");
+							?>
+						</tbody>
+					</table>
+					
+				<h4>Gloves</h4>
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Gear</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayGearbyType("'Gloves'");
+							?>
+						</tbody>
+					</table>
+				<h4>Legs</h4>
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Gear</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayGearbyType("'Legs'");
+							?>
+						</tbody>
+					</table>
+					<h4>Boots</h4>
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Gear</th>
+								<th scope="col">Type</th>
+								<th scope="col">Intellect</th>
+								<th scope="col">Strength</th>
+								<th scope="col">Agility</th>
+								<th scope="col">Stamina</th>
+								<th scope="col">Armor</th>
+								<th scope="col">Magic_Resist</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayGearbyType("'Boots'");
+							?>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 		<!--Bootstrap JS Dependencies-->

@@ -5,9 +5,11 @@ $dbhost = '136.61.234.100';
 $dbname = 'dbapp';
 $dbuser = 'dbapp';
 $dbpass = 'paswd135';
+$connection;
 
 $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
 if ($connection->connect_error) {die($connection->connect_error);}
+
 
 /*Functions for DB Queries */
 function sendQuery($query){
@@ -143,31 +145,98 @@ function enemyByTypeDropDown(){
 		echo "<option>" . $enemy['Enemy_Name'] . "</option>";	
 	}
 }
-
+/*
 function displayHeroes($userID){
+    global $connection;
+    global $dbhost;
+    global $dbuser;
+    global $dbpass;
+    global $dbname;
+    
+	$names = array();
+	$levels = array();
+	$classes = array();
+	$ints = array();
+	$strs = array();
+	$agis = array();
+	$stas = array();
+	$arms = array();
+	$mars = array();
+	
+	$i = 0;
+	
 	$data = getHeroes($userID);
-	while ($hero = $data->fetch_assoc()){
-		$heroStats = getHeroStats($userID, $hero['Character_Name']);
+	while($hero = $data->fetch_assoc()){
+		$names[$i] = $hero['Character_Name'];
+		$levels[$i] = $hero['Character_Level'];
+		$classes[$i] = $hero['Character_Class'];
+		$i++;
+	}
+	
+	mysqli_close($connection);
+	$connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+    if ($connection->connect_error) {die($connection->connect_error);}
+	
+	$total = count($names);
+	
+	for($j = 0; $j < $total; $j++){
+		$k = 0;
+		$heroStats = getHeroStats($userID, "'" . $names[$j] . "'");
+		while($stats = $heroStats->fetch_assoc()) {
+			$ints[$k] = $stats['Intellect'];
+			$strs[$k] = $stats['Strength'];
+			$agis[$k] = $stats['Agility'];
+			$stas[$k] = $stats['Stamina'];
+			$arms[$k] = $stats['Armor'];
+			$mars[$k] = $stats['Magic_Resist'];
+			$k++;
+		}
+		mysqli_close($connection);
+	    $connection = new mysqli($dbhost, $dbuser, $dbpass, $dbname);
+        if ($connection->connect_error) {die($connection->connect_error);}
+	}
+	$h = 0; 
+	
+	while($h < $total){
 		echo "<tr>";
-		echo "<td>" . $hero['Character_Name'] . "</td>";
-		echo "<td>" . $hero['Character_Level'] . "</td>";
-		echo "<td>" . $hero['Character_Class'] . "</td>";
-		echo "<td>" . $heroStats['Intellect'] . "</td>";
-		echo "<td>" . $heroStats['Strength'] . "</td>";
-		echo "<td>" . $heroStats['Agility'] . "</td>";
-		echo "<td>" . $heroStats['Stamina'] . "</td>";
-		echo "<td>" . $heroStats['Armor'] . "</td>";
-		echo "<td>" . $heroStats['Magic_Resist'] . "</td>";
+		echo "<td>" . $names[$h] . "</td>";
+		echo "<td>" . $levels[$h] . "</td>";
+		echo "<td>" . $classes[$h] . "</td>";
+		echo "<td>" . $ints[$h] . "</td>";
+		echo "<td>" . $strs[$h] . "</td>";
+		echo "<td>" . $agis[$h] . "</td>";
+		echo "<td>" . $stas[$h] . "</td>";
+		echo "<td>" . $arms[$h] . "</td>";
+		echo "<td>" . $mars[$h] . "</td>";
+		echo "</tr>";
+		$h++;
+	}
+}
+*/
+
+function displayTeams(){
+	$data = getTeamNames();
+	while ($team = $data->fetch_assoc()){
+	    echo "<tr>";
+		echo "<td>" . $team['Team_Name'] . "</td>";	
 		echo "</tr>";
 	}
 }
 
-function displayTeams(){
-	
-}
-
-function displayGearbyType(){
-	
+function displayGearbyType($type){
+	$data = getGearByType($type);
+	while ($gear = $data->fetch_assoc()){
+	    echo "<tr>";
+		echo "<td>" . $gear['Gear_Name'] . "</td>";	
+		echo "<td>" . $gear['Gear_Type'] . "</td>";	
+		echo "<td>" . $gear['Intellect'] . "%</td>";	
+		echo "<td>" . $gear['Strength'] . "%</td>";	
+		echo "<td>" . $gear['Agility'] . "%</td>";	
+		echo "<td>" . $gear['Stamina'] . "%</td>";	
+		echo "<td>" . $gear['Armor'] . "</td>";	
+		echo "<td>" . $gear['Magic_Resist'] . "</td>";	
+		echo "</tr>";
+	}
 }
 
 function displayEnemiesbyType(){

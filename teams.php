@@ -30,6 +30,21 @@
 					<div class="col"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editTeamModal">Edit a Team</button></div>
 				</div>
 				<div id="content" class="container-fluid">
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col">Team Name</th>
+								<th scope="col">Team Leader</th>
+								<th scope="col">Team Members</th>
+								<th scope="col">Active Characters</th>
+							</tr>	
+						</thead>
+						<tbody>
+							<?php
+								displayTeams();
+							?>
+						</tbody>
+					</table>
 				</div>
 				<div class="modal fade" id="joinTeamModal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 					<div class="modal-dialog" role="document">
